@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import MonthNavigation from "./components/MonthNavigation";
 import { useState } from "react";
+import ExpenseList from "./components/ExpenseList";
 
 const Container = styled.main`
   max-width: 800px;
@@ -17,14 +18,14 @@ export const Section = styled.section`
   padding: 20px;
 `;
 
-const Home = () => {
+const Home = ({ expenses, setExpenses }) => {
   const [month, setMonth] = useState(1);
-  console.log(month);
+
   return (
     <Container>
       <Section>지출을 입력하는 섹션</Section>
       <MonthNavigation month={month} setMonth={setMonth} />
-      <Section>지출을 리스팅하는 섹션</Section>
+      <ExpenseList expenses={expenses} setExpenses={setExpenses} />
     </Container>
   );
 };
