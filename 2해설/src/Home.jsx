@@ -19,9 +19,9 @@ const Home = () => {
   return (
     <Container>
       <h1>여기가 진짜 HOME</h1>
-      <Section>지출 입력 섹션</Section>
-      <Section>캘린더 버튼 섹션</Section>
-      <Section>지출 내역 섹션</Section>
+      <Section>지출을 입력하는 섹션</Section>
+      <Section>캘린더 역할을 하는 섹션</Section>
+      <Section>지출을 리스팅하는 섹션</Section>
     </Container>
   );
 };
