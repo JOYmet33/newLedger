@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MonthNavigation from "./components/MonthNavigation";
+import { useState } from "react";
 
 const Container = styled.main`
   max-width: 800px;
@@ -17,10 +18,12 @@ export const Section = styled.section`
 `;
 
 const Home = () => {
+  const [month, setMonth] = useState(1);
+  console.log(month);
   return (
     <Container>
-      <MonthNavigation />
-      <Section>캘린더 역할을 하는 섹션</Section>
+      <Section>지출을 입력하는 섹션</Section>
+      <MonthNavigation month={month} setMonth={setMonth} />
       <Section>지출을 리스팅하는 섹션</Section>
     </Container>
   );

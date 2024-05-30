@@ -40,16 +40,21 @@ const MonthButton = styled.button`
     color: #fff;
   }
 `;
+const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const MonthNavigation = () => {
-  const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
+const MonthNavigation = ({ month, setMonth }) => {
   return (
     <Section>
       <MonthWrapper>
-        {MONTHS.map((month) => (
-          <MonthButton key={month}>{`${month}월`}</MonthButton>
-        ))}
+        {MONTHS.map((element) => {
+          return (
+            <MonthButton
+              key={element}
+              selected={element === month}
+              onClick={() => setMonth(element)}
+            >{`${element}월`}</MonthButton>
+          );
+        })}
       </MonthWrapper>
     </Section>
   );
