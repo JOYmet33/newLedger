@@ -76,7 +76,8 @@ const ExpenseList = ({ expenses, setExpenses }) => {
           <ExpenseItem
             key={expense.id}
             onClick={() => {
-              // navigate(`/detail/${expense.id}`);
+              // 디테일 페이지로 이동하는 로직 작성 필요
+              navigate(`/detail/${expense.id}`);
             }}
           >
             <ExpenseDetails>

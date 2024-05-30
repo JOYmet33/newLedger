@@ -21,11 +21,16 @@ export const Section = styled.section`
 const Home = ({ expenses, setExpenses }) => {
   const [month, setMonth] = useState(1);
 
+  // 정돈된 state를 넘겨보자 : filter
+  const filteredExpenses = expenses.filter(
+    (expense) => expense.month === month
+  );
+
   return (
     <Container>
       <Section>지출을 입력하는 섹션</Section>
       <MonthNavigation month={month} setMonth={setMonth} />
-      <ExpenseList expenses={expenses} setExpenses={setExpenses} />
+      <ExpenseList expenses={filteredExpenses} />
     </Container>
   );
 };
